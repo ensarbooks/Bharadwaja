@@ -8,6 +8,9 @@ import random
 
 # print("My pwd is \n",pwd)
 
+.................................................................................................................................
+
+import random
 
 strng='hello ensar this is bharadwaja iam generating Readable password generator program using python langauage.so please generate my new password '
 l=[]
