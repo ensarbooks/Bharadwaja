@@ -1,0 +1,20 @@
+import sqlite3
+con = sqlite3.connect("mytable.sqlite3")
+cur = con.cursor()
+mytabl = "create table if not exists emp_table(emp_id int, name varchar(50), salary REAL, position varchar(50))"
+cur.execute(mytabl)
+con.commit()
+# cur.execute('insert into emp_table values(1, "Bhaktasir", 70000, "CEO")')
+# cur.execute('insert into emp_table values(4, "Hazarathsir", 50000, "Manager")')
+# cur.execute('insert into emp_table values(3, "Shahidsir", 60000, "HR")')
+# cur.execute('insert into emp_table values(5, "Sumansir", 20000, "TL")')
+# cur.execute('insert into emp_table values(2, "Sasisir", 10000, "FSD")')
+cur.execute("UPDATE emp_table SET name = 'lokesh' WHERE emp_id = 3")
+cur.execute("UPDATE emp_table SET name = 'praneeth' WHERE emp_id = 4")
+cur.execute("UPDATE emp_table SET name = 'Basha' WHERE emp_id = 5")
+con.commit()
+cur.execute("Delete FROM emp_table")
+result= cur.fetchall()
+print(result)
+con.commit()
+ 
